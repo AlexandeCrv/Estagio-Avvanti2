@@ -22,3 +22,32 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# Ignorar configurações do ESLint
+.eslintrc.cjs
+
+# Ignorar configurações do TypeScript
+tsconfig.json
+tsconfig.build.json
+
+# Ignorar o arquivo de configuração do editor (ex: VSCode)
+.vscode/
+
+# Ignorar o arquivo de dependências do Node.js
+package.json
+package-lock.json
+yarn.lock
+
+# Ignorar arquivos de README
+README.md
+
+# Ignorar diretórios de build ou dist
+dist/
+build/
+
+# Ignorar arquivos de configuração do ambiente
+.env
+.env.local
+
+# Ignorar arquivos do sistema
+.DS_Store
+Thumbs.db
