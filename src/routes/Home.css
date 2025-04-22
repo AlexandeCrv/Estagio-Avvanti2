@@ -6,12 +6,14 @@
 
 .logo {
   width: 800px;
+  max-width: 100%; /* Responsividade: ajusta a largura da logo */
 }
 
 figure {
   margin: auto;
   text-align: center;
 }
+
 @keyframes cloud {
   0% {
     transform: translate3d(0, 0, 0);
@@ -32,92 +34,103 @@ figure {
     transform: translate3d(0, 0, 0);
   }
 }
+
 .home {
   overflow: hidden;
 }
+
 .nuvens {
   background-color: #622aff;
   width: 100%;
   padding-bottom: 0;
   position: relative;
 }
+
+.cloud-3-2,
+.cloud-3-1,
+.cloud-2-3,
+.cloud-2-4,
+.cloud-2-5,
+.cloud-2-2,
+.cloud-2-1,
+.cloud-1-2,
+.cloud-1-1 {
+  position: absolute;
+  animation: cloud linear infinite;
+}
+
 .cloud-3-2 {
   top: -90px;
   left: 150vw;
-  position: absolute;
-
-  animation: cloud 300s linear infinite;
+  animation-duration: 300s;
 }
+
 .cloud-3-1 {
-  animation: cloud 300s linear infinite;
   top: 250px;
   left: 160vw;
-  position: absolute;
+  animation-duration: 300s;
 }
+
 .cloud-2-3 {
   top: -250px;
   left: 160vw;
-  position: absolute;
-  animation: cloud 340s linear infinite;
+  animation-duration: 340s;
 }
+
 .cloud-2-4 {
   top: -150px;
-
   left: 160vw;
-  position: absolute;
-  animation: cloud 100s linear infinite;
+  animation-duration: 100s;
 }
+
 .cloud-2-5 {
   top: 250px;
   left: 160vw;
-  position: absolute;
-  animation: cloud 130s linear infinite;
+  animation-duration: 130s;
 }
+
 .cloud-2-2 {
-  position: absolute;
   top: -300px;
-  animation: cloud 240s linear infinite;
   left: 95vw;
+  animation-duration: 240s;
 }
+
 .cloud-2-1 {
   top: 10px;
-  animation: cloud 240s linear infinite;
   left: 2vw;
-
-  position: absolute;
+  animation-duration: 240s;
 }
+
 .cloud-1-2 {
   top: -300px;
-
-  position: absolute;
   left: 170vw;
-  animation: cloud 180s linear infinite;
+  animation-duration: 180s;
 }
+
 .cloud-1-1 {
   top: -200px;
-
-  position: absolute;
-  animation: cloud 180s linear infinite;
   left: 30vw;
+  animation-duration: 180s;
 }
+
 .absolute {
   width: 35px;
   border-right: solid white 1px;
 }
+
 img {
   vertical-align: middle;
   max-width: 100%;
   display: inline-block;
-}
-img {
   border: 0;
 }
+
 .resphub {
   height: 750px;
   margin-top: 20px;
-
-  width: 750px;
-  right: 300px;
+  width: 90%; /* Responsivo: largura ajustável */
+  max-width: 750px; /* Limita a largura máxima */
+  right: 0;
   font-size: 25px;
   background-image: url(/src/assets/pergaminhomainn.png);
   background-size: cover;
@@ -128,52 +141,49 @@ img {
   z-index: 1;
   position: absolute;
 }
+
 .fotos {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap; /* Permite que as fotos se reorganizem em várias linhas */
   justify-content: space-around;
-  width: 500px;
-
+  width: 100%; /* Ajusta para ocupar toda a largura */
   margin-top: 160px;
 }
-.fotos {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 500px;
 
-  margin-top: 160px;
-}
 .fotohub {
   width: 130px;
-
-  border-radius: 100%;
+  height: 130px;
+  border-radius: 50%;
+  margin: 10px; /* Adiciona espaço entre as imagens */
 }
+
 .nomehub {
   line-height: 30px;
   width: 450px;
   margin: auto;
-
   margin-top: 10px;
 }
+
 .infoshub {
   margin-top: 5px;
   line-height: 20px;
   height: 290px;
 }
+
 .exphub {
   background-color: #222435;
   margin-top: 40px;
   height: 50px;
   width: 450px;
   border-radius: 10px;
-
   margin: auto;
   position: relative;
 }
+
 .barra {
   margin-top: 40px;
 }
+
 .barraxp {
   height: 100%;
   color: white;
@@ -186,6 +196,7 @@ img {
   font-size: 13px;
   margin-top: 10px;
 }
+
 .barralateral {
   border-right: 1px solid white;
   display: flex;
@@ -195,9 +206,11 @@ img {
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
 }
+
 .nivel {
   margin-bottom: 10px;
 }
+
 .projetosdiv {
   margin-top: 50px;
   border: 2px solid white;
@@ -207,13 +220,86 @@ img {
 .fontsize:hover {
   transform: scale(1.13);
 }
+
 .fontsize {
   font-size: 15px;
   line-height: 20px;
   margin-top: 10px;
   cursor: pointer;
 }
-.seguidoresatak {
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  .resphub {
+    width: 100%; /* Ajusta a largura para 100% */
+    font-size: 22px; /* Reduz o tamanho da fonte */
+  }
+
+  .fotos {
+    width: 90%; /* Reduz a largura das fotos para 90% */
+    flex-direction: row; /* Organiza as fotos em uma coluna */
+  }
+
+  .fotohub {
+    width: 60px;
+    height: 60px; /* Ajusta o tamanho das fotos */
+  }
+
+  .nomehub {
+    width: 10%; /* Ajusta o tamanho do nome */
+  }
+
+  .infoshub {
+    height: auto; /* Deixa a altura adaptável */
+  }
+
+  .exphub {
+    width: 30%; /* Reduz o tamanho da exp */
+  }
+
+  .barraxp {
+    font-size: 12px; /* Reduz o tamanho da fonte da barra */
+  }
+
+  .projetosdiv {
+    width: 90%; /* Ajusta o tamanho do projeto */
+  }
+
+  .fontsize {
+    font-size: 14px; /* Reduz o tamanho da fonte */
+  }
+}
+
+@media screen and (max-width: 459px) {
+  .logo {
+    width: 60%; /* Ajusta o tamanho da logo em telas muito pequenas */
+  }
+
+  .fotos {
+    margin-top: 100px; /* Reduz o espaçamento entre as fotos */
+  }
+
+  .resphub {
+    height: auto; /* Permite que a altura seja ajustada */
+    width: 100%; /* A largura será 100% */
+  }
+
+  .fotohub {
+    width: 80px;
+    height: 80px; /* Reduz ainda mais o tamanho das fotos */
+  }
+
+  .nomehub {
+    width: 100%; /* Ajusta o nome para ocupar toda a largura disponível */
+  }
+
+  .fontsize {
+    font-size: 12px; /* Reduz o tamanho da fonte */
+  }
+}
+/* Responsividade para a seção de seguidores */
+.seguidoresatak,
+.seguidoresdeff {
   border: 2px solid white;
   width: 100px;
   margin-top: 10px;
@@ -223,96 +309,76 @@ img {
   align-items: center;
   font-size: 20px;
 }
-.seguidoresdeff {
-  border: 2px solid white;
-  width: 100px;
-  margin-top: 10px;
-  margin-right: 10px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 20px;
-}
-.bbt {
-  margin-top: 10px;
-  border-radius: 10px;
-}
 
 .segefolow {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 530px;
+  width: 100%;
   margin: auto;
+  flex-wrap: wrap;
 }
 
-.folow {
-  margin-top: 10px;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
 .projetoseflows {
   display: flex;
   justify-content: space-around;
   margin-top: 5px;
+  flex-wrap: wrap;
 }
 
-.sujestaofqatak {
-  width: 350px;
+.sujestaofqatak,
+.sujestaofdeff {
+  width: 100%;
+  max-width: 350px;
   height: 430px;
   position: absolute;
   color: white;
-  left: -10px;
   top: 500px;
   border-radius: 7px;
   z-index: 1;
+  left: 0;
 }
 
-.infosdeff {
-  padding: 10px;
-  position: absolute;
-  z-index: 2;
-  top: 40px;
-  right: 30px;
-  width: 250px;
-  color: black;
-  font-size: 19px;
+.sujestaofdeff {
+  left: auto;
+  right: 0;
 }
+
+.infosdeff,
 .infosatak {
   padding: 10px;
   position: absolute;
   z-index: 2;
   top: 40px;
-  left: 50px;
-  width: 250px;
-  color: black;
   font-size: 19px;
+  color: black;
+  width: 250px;
 }
+
+.infosdeff {
+  right: 30px;
+}
+
+.infosatak {
+  left: 50px;
+}
+
 .escudo-espadag {
   margin-top: 30px;
 }
-.h1def {
+
+.h1def,
+.h1atak {
   margin-left: 70px;
   margin-bottom: 30px;
 }
+
 .h1atak {
   margin-left: 60px;
   margin-bottom: 30px;
 }
-.sujestaofdeff {
-  width: 350px;
-  height: 430px;
-  position: absolute;
-  color: white;
-  left: 960px;
-  top: 500px;
-  border-radius: 7px;
-  z-index: 1;
-}
 
+/* Barra de XP */
 .barraxp .filled-bar {
   position: absolute;
   top: 0;
@@ -328,6 +394,7 @@ a {
   border-right: solid white 1px;
 }
 
+/* Botão de ação */
 .button {
   position: relative;
   display: inline-block;
@@ -335,46 +402,23 @@ a {
 }
 
 .button p,
-label {
+.label {
   color: black;
   font-family: Helvetica, sans-serif;
   font-weight: bold;
   font-size: 20px;
-
   text-align: center;
-  text-decoration: none;
   background-color: #ffa12b;
   display: block;
   position: relative;
   padding: 10px 20px;
-
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  text-shadow: 0px 1px 0px #000;
-  filter: dropshadow(color=#000, offx=0px, offy=1px);
-
-  -webkit-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
-  -moz-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
-  box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
-
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
   border-radius: 5px;
 }
 
-.button p:active {
-  top: 10px;
-  background-color: #f78900;
-
-  -webkit-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
-  -moz-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3pxpx 0 #915100;
-  box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
-}
+.button p:active,
 .button label:active {
   top: 10px;
   background-color: #f78900;
-
-  -webkit-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
-  -moz-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3pxpx 0 #915100;
   box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
 }
 
@@ -388,18 +432,49 @@ label {
   left: -4px;
   z-index: -1;
   background-color: #2b1800;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
   border-radius: 5px;
 }
 
+/* Responsividade geral */
+@media (max-width: 768px) {
+  .segefolow,
+  .projetoseflows {
+    flex-direction: column;
+  }
+
+  .sujestaofqatak,
+  .sujestaofdeff {
+    width: 90%;
+    left: 0;
+    right: 0;
+    position: relative;
+    top: 20px;
+  }
+
+  .infosdeff,
+  .infosatak {
+    width: 100%;
+    left: 20px;
+    right: 20px;
+    top: 20px;
+  }
+
+  .escudo-espadag {
+    margin-top: 20px;
+  }
+
+  .h1def,
+  .h1atak {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+}
 @media screen and (min-width: 1536px) {
   .resphub {
     height: 750px;
     margin-top: 20px;
-
     width: 750px;
-    right: 390px;
+    right: 400px; /* Ajuste para não sobrepor */
     font-size: 25px;
     background-image: url(/src/assets/pergaminhomainn.png);
     background-size: cover;
@@ -410,6 +485,7 @@ label {
     z-index: 1;
     position: absolute;
   }
+
   .sujestaofdeff {
     width: 350px;
     height: 430px;
@@ -428,12 +504,12 @@ label {
     height: 1056px;
     position: absolute;
   }
+
   .resphub {
     margin-top: 20px;
-
-    width: 620px;
-    right: 0px;
-    font-size: 25px;
+    width: 90%; /* Ajusta a largura para 90% da tela */
+    right: 5%; /* Alinha à direita com um pequeno espaço */
+    font-size: 18px; /* Ajuste para melhor legibilidade */
     background-image: url(/src/assets/pergaminhomainn.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -446,203 +522,115 @@ label {
 
   .fotos {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap; /* Permite que as fotos se ajustem em várias linhas, se necessário */
     justify-content: space-around;
-    width: 400px;
-
+    width: 100%; /* Ajusta a largura para 100% */
     margin-top: 130px;
   }
-  .fotohub {
-    width: 100px;
 
-    border-radius: 100%;
+  .fotohub {
+    width: 80px; /* Ajusta o tamanho das fotos */
+    border-radius: 50%;
   }
+
   .nomehub {
     line-height: 30px;
-    width: 450px;
-    margin: auto;
-
+    width: 100%;
     margin-top: 10px;
+    text-align: center; /* Centraliza o nome */
   }
+
   .infoshub {
     margin-top: 5px;
     line-height: 30px;
     height: 290px;
-    width: 620px;
+    width: 100%; /* Ajusta a largura para 100% */
   }
+
   .exphub {
     background-color: #222435;
-
     height: 50px;
-    width: 400px;
+    width: 90%;
     border-radius: 10px;
-
-    margin: auto;
+    margin: 0 auto;
     position: relative;
-  }
-  .barra {
-    margin-top: 10px;
-  }
-  .barraxp {
-    height: 100%;
-    color: white;
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    font-size: 13px;
-    margin-top: 10px;
-  }
-  .barralateral {
-    border-right: 1px solid white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 28px;
-    border-top-left-radius: 7px;
-    border-bottom-left-radius: 7px;
-  }
-  .nivel {
-    margin-bottom: 10px;
-  }
-  .projetosdiv {
-    margin-top: 50px;
-    border: 2px solid white;
-    width: 200px;
-    cursor: pointer;
   }
 
   .segefolow {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    width: 430px;
-    margin: auto;
+    width: 90%; /* Ajuste para caber melhor na tela */
+    margin: 20px auto;
   }
 
+  .sujestaofdeff,
   .sujestaofqatak {
-    width: 350px;
-    height: 430px;
-    position: absolute;
-    color: white;
-    left: -30px;
+    width: 100%; /* Ajusta para tela menor */
+    top: auto;
+    bottom: 0;
+    left: 0;
+    margin-top: 20px;
+  }
 
-    top: 960px;
-    border-radius: 7px;
-    z-index: 1;
-  }
-  .sujestaofdeff {
-    width: 350px;
-    height: 430px;
-    position: absolute;
-    color: white;
-    left: 260px;
-    top: 960px;
-    border-radius: 7px;
-    z-index: 1;
-  }
-  .infosdeff {
-    padding: 10px;
-    position: absolute;
-    z-index: 2;
-    top: 40px;
-    right: 30px;
-    width: 250px;
-    color: black;
-    font-size: 19px;
-  }
+  .infosdeff,
   .infosatak {
     padding: 10px;
-    position: absolute;
-    z-index: 2;
-    top: 40px;
-    left: 50px;
-    width: 250px;
+    width: 100%;
+    font-size: 14px; /* Ajusta o tamanho da fonte */
     color: black;
-    font-size: 19px;
+    position: relative;
+    z-index: 2;
   }
 
   .button {
-    position: relative;
     display: inline-block;
-    margin: -5px;
+    width: 100%;
+    margin: 10px 0;
   }
-  .folow {
-    font-size: 20px;
-  }
+
   .button p,
   label {
     color: black;
     font-family: Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 20px;
-
+    font-size: 18px; /* Ajusta o tamanho da fonte */
     text-align: center;
     text-decoration: none;
     background-color: #ffa12b;
     display: block;
     position: relative;
-    padding: 4px;
-
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    text-shadow: 0px 1px 0px #000;
-    filter: dropshadow(color=#000, offx=0px, offy=1px);
-
-    -webkit-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
-    -moz-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
-    box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
-
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
+    padding: 10px;
     border-radius: 5px;
   }
 
-  .button p:active {
-    top: 10px;
-    background-color: #f78900;
-
-    -webkit-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
-    -moz-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3pxpx 0 #915100;
-    box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
-  }
+  .button p:active,
   .button label:active {
-    top: 10px;
     background-color: #f78900;
-
-    -webkit-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
-    -moz-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3pxpx 0 #915100;
-    box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
   }
 
   .button:after {
     content: "";
-    height: 100%;
-    width: 100%;
-    padding: 4px;
     position: absolute;
     bottom: -15px;
     left: -4px;
     z-index: -1;
     background-color: #2b1800;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
     border-radius: 5px;
   }
 }
+
 @media screen and (max-width: 459px) {
   .fundo {
     width: 100%;
-
     position: absolute;
   }
+
   .resphub {
     margin-top: 20px;
-
-    width: 470px;
-    right: -12px;
-    font-size: 25px;
+    width: 90%; /* Ajusta a largura */
+    right: 0;
+    font-size: 18px; /* Ajuste para melhorar a leitura em telas menores */
     background-image: url(/src/assets/pergaminhomainn.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -657,183 +645,48 @@ label {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 300px;
-
+    width: 100%;
     margin-top: 100px;
   }
-  .fotohub {
-    width: 70px;
 
-    border-radius: 100%;
+  .fotohub {
+    width: 60px; /* Ajuste maior para fotos */
+    border-radius: 50%;
   }
+
   .nomehub {
     line-height: 14px;
-    width: 250px;
-    height: 50px;
-    margin: auto;
-
-    margin-top: 1px;
-    margin-left: 100px;
-    font-size: 15px;
+    width: 80%;
+    font-size: 14px; /* Reduz o tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+    margin: 0 auto;
   }
+
   .infoshub {
     margin-top: 5px;
-    line-height: 30px;
-    height: 290px;
-    width: 400px;
+    line-height: 20px;
+    height: auto;
+    width: 100%;
+    font-size: 14px;
   }
+
   .exphub {
     background-color: #222435;
-
     height: 30px;
-    width: 300px;
+    width: 80%;
     border-radius: 10px;
-
-    margin: auto;
-    position: relative;
-  }
-  .barra {
-    margin-top: 10px;
-    margin-left: 60px;
-  }
-  .barraxp {
-    height: 100%;
-    color: white;
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    font-size: 13px;
-    margin-top: 10px;
-  }
-  .barralateral {
-    border-right: 1px solid white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 28px;
-    border-top-left-radius: 7px;
-    border-bottom-left-radius: 7px;
-  }
-  .nivel {
-    margin-bottom: 10px;
-    font-size: 20px;
+    margin: 10px auto;
   }
 
   .segefolow {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 320px;
-
-    font-size: 15px;
-    margin-left: 70px;
-  }
-  .folow {
-    font-size: 15px;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 20px;
   }
 
-  .sujestaofqatak {
-    width: 250px;
-
-    position: absolute;
-    color: white;
-    left: -30px;
-
-    top: 780px;
-    border-radius: 7px;
-    z-index: 1;
+  .button p,
+  label {
+    font-size: 15px; /* Menor para caber melhor nas telas menores */
   }
-  .sujestaofdeff {
-    width: 250px;
-
-    position: absolute;
-    color: white;
-    left: 200px;
-    top: 780px;
-    border-radius: 7px;
-    z-index: 1;
-  }
-  .infosdeff {
-    padding: 5px;
-    position: absolute;
-    z-index: 2;
-    top: 40px;
-    right: 5px;
-    width: 200px;
-    color: black;
-    font-size: 15px;
-
-    height: 200px;
-  }
-  .infosatak {
-    padding: 5px;
-    position: absolute;
-    z-index: 2;
-    top: 40px;
-    left: 30px;
-    width: 200px;
-    color: black;
-    font-size: 15px;
-  }
-}
-.button p,
-label {
-  color: black;
-  font-family: Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 15px;
-
-  text-align: center;
-  text-decoration: none;
-  background-color: #ffa12b;
-  display: block;
-  position: relative;
-  padding: 3px;
-
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  text-shadow: 0px 1px 0px #000;
-  filter: dropshadow(color=#000, offx=0px, offy=1px);
-
-  -webkit-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
-  -moz-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
-  box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
-
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-
-.button p:active {
-  top: 10px;
-  background-color: #f78900;
-
-  -webkit-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
-  -moz-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3pxpx 0 #915100;
-  box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
-}
-.button label:active {
-  top: 10px;
-  background-color: #f78900;
-
-  -webkit-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
-  -moz-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3pxpx 0 #915100;
-  box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
-}
-
-.button:after {
-  content: "";
-  height: 100%;
-  width: 100%;
-  padding: 4px;
-  position: absolute;
-  bottom: -15px;
-  left: -4px;
-  z-index: -1;
-  background-color: #2b1800;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
 }

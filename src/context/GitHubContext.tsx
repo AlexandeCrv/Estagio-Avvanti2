@@ -4,7 +4,7 @@ interface GitHubContextType {
   user: any;
   repos: any[];
   setUser: (user: any) => void;
-  setRepos: (repos: any[]) => void;
+  setReposs: (repos: any[]) => void;
 }
 
 const GitHubContext = createContext<GitHubContextType | undefined>(undefined);
@@ -19,10 +19,10 @@ export const useGitHub = () => {
 
 export const GitHubProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<any>(null);
-  const [repos, setRepos] = useState<any[]>([]);
+  const [repos, setReposs] = useState<any[]>([]);
 
   return (
-    <GitHubContext.Provider value={{ user, repos, setUser, setRepos }}>
+    <GitHubContext.Provider value={{ user, repos, setUser, setReposs }}>
       {children}
     </GitHubContext.Provider>
   );

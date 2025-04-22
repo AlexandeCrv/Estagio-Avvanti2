@@ -38,7 +38,7 @@ const Home = () => {
 
   const [isOpenFdeff, setisOpenFdeff] = useState(false);
   const [imgbbt, setimgbbt] = useState("");
-  const { user, setUser, setRepos } = useGitHub();
+  const { user, setUser, setReposs } = useGitHub();
 
   const getthub = async (username: string) => {
     try {
@@ -61,7 +61,7 @@ const Home = () => {
           `https://api.github.com/users/${user.login}/repos`
         );
         const { data } = response;
-        setRepos(data);
+        setReposs(data);
       } catch (error) {
         alert("Player inexistente!");
       }

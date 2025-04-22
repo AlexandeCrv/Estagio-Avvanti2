@@ -4,6 +4,7 @@ import App from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./routes/Home.tsx";
 import Projs from "./routes/Projs.tsx";
+import redeee from "../assets/rede.png";
 import { GitHubProvider } from "./context/GitHubContext.tsx";
 
 const router = createBrowserRouter([

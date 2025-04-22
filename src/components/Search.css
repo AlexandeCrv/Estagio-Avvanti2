@@ -1,25 +1,29 @@
 .search {
   margin: auto;
   text-align: center;
-  width: 200px;
+  width: 80%; /* Mudando para 80% para garantir que ocupe uma parte da tela */
+  max-width: 600px; /* Limita a largura máxima */
   z-index: 1;
   color: white;
-  position: absolute;
+  position: relative; /* Altere para relative para um melhor controle da posição */
 }
 
 .procura {
-  height: 250px;
-  width: 600px;
+  height: auto; /* Altura automática para ajustes responsivos */
+  width: 90%; /* Largura ajustada para 90% da tela */
+  max-width: 600px; /* Limita a largura máxima */
   margin: auto;
-  font-size: 23px;
+  font-size: 20px; /* Reduzindo um pouco o tamanho da fonte */
   background-color: rgba(0, 0, 0, 0.31);
   border-radius: 20px;
+  padding: 20px; /* Adiciona padding para melhor espaçamento interno */
 }
 
 .inpt {
   padding: 15px;
-  font-size: 20px;
-  width: 250px;
+  font-size: 18px; /* Reduz o tamanho da fonte */
+  width: 100%; /* Ocupa toda a largura disponível */
+  max-width: 300px; /* Limita a largura máxima do input */
   border: none;
   outline: none;
   position: relative;
@@ -28,13 +32,15 @@
 }
 
 .h2ep {
-  height: 100px;
-  line-height: 30px;
-  padding: 30px;
+  height: auto; /* Ajusta a altura para se adequar ao conteúdo */
+  line-height: 1.5;
+  padding: 20px;
 }
+
 .psearch {
-  font-size: 20px;
+  font-size: 18px; /* Ajusta o tamanho da fonte */
 }
+
 .hubaberto {
   width: 100px;
   height: 100px;
@@ -45,6 +51,7 @@
   display: inline-block;
   margin: 20px;
 }
+
 .searchbutton p {
   color: black;
   font-family: Helvetica, sans-serif;
@@ -56,25 +63,22 @@
   display: block;
   position: relative;
   padding: 10px;
-
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   text-shadow: 0px 1px 0px #000;
   filter: dropshadow(color=#000, offx=0px, offy=1px);
-
   -webkit-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
   -moz-box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
   box-shadow: inset 0 1px 0 #ffe5c4, 0 10px 0 #915100;
-
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
+
 .searchbutton p:active {
   top: 10px;
   background-color: #f78900;
-
   -webkit-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
-  -moz-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3pxpx 0 #915100;
+  -moz-box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
   box-shadow: inset 0 1px 0 #ffe5c4, inset 0 -3px 0 #915100;
 }
 
@@ -92,13 +96,41 @@
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
+
+@media screen and (max-width: 768px) {
+  .search {
+    width: 90%; /* Ajusta a largura */
+  }
+
+  .procura {
+    width: 100%; /* Garantir que ocupe toda a largura disponível */
+    font-size: 18px; /* Ajusta o tamanho da fonte */
+  }
+
+  .inpt {
+    font-size: 16px; /* Ajusta o tamanho do input */
+    padding: 12px;
+  }
+
+  .searchbutton p {
+    font-size: 18px; /* Ajusta o tamanho da fonte do botão */
+    padding: 8px;
+  }
+}
+
 @media screen and (max-width: 459px) {
   .procura {
-    height: 250px;
-    width: 400px;
-    margin: auto;
-    font-size: 23px;
-    background-color: rgba(0, 0, 0, 0.31);
-    border-radius: 20px;
+    width: 100%; /* Garantir que ocupe 100% da largura */
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+  }
+
+  .inpt {
+    font-size: 14px; /* Ajusta o tamanho da fonte do input */
+    width: 100%; /* Garante que o input ocupe toda a largura disponível */
+  }
+
+  .searchbutton p {
+    font-size: 16px; /* Ajusta o tamanho da fonte do botão */
+    padding: 6px;
   }
 }

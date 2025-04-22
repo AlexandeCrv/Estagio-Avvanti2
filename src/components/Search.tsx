@@ -19,7 +19,7 @@ const Search = ({ gethub }: SearchProps) => {
         <div className="procura">
           <div className="h2ep">
             <h2>Procure por um Player:</h2>
-            <p className="psearch">Conheça seus melhores projetos!</p>
+            <p className="psearch">Conheça seus melhores projetos!!!</p>
           </div>
 
           <input
